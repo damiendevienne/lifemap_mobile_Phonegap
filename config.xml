@@ -18,6 +18,4 @@
     <allow-navigation href="http://umr5558-treezoom/*" />
     <icon src="icon.png" /> 
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
-    <plugin name="cordova-plugin-fullscreen" source="npm" />
-    <preference name="fullscreen" value="true" />
 </widget>
