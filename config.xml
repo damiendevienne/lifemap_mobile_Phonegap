@@ -4,7 +4,6 @@
         id          = "fr.univ-lyon1.lifemapcom"
         version     = "1.0.0" >
     <!-- versionCode is optional and Android only -->
-
     <name>Lifemap</name>
 
     <description>
@@ -14,6 +13,9 @@
     <author href="https://lbbe.univ-lyon1.fr/-de-Vienne-Damien-.html" email="damien.de-vienne@univ-lyon1.fr">
         Damien de Vienne 
     </author>
-    <preference name="fullscreen" value="true" />    
-    <access origin="*" />
+    <!--    <access origin="*" />-->
+    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+    <allow-navigation href="http://umr5558-treezoom/*" />
+    <icon src="icon.png" /> 
+    <allow-navigation href="http://umr5558-ncbitreezoom/*" />
 </widget>
