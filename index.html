@@ -271,6 +271,20 @@
 
 
 		<!-- SCRIPTS -->
+		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
+		<script>
+		document.addEventListener("offline", onOffline, false);
+		document.addEventListener("online", onOnline, false);
+
+		function onOffline() {
+		    alert('Warning: Lifemap cannot be used if you are not connected to the internet. Please connect your device to a network to be able to use Lifemap.');
+		}
+		function onOnline() {
+			alert('You are now connected to the internet. Happy exploration with Lifemap!');
+		}
+		</script>
+
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery-1.12.3.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
