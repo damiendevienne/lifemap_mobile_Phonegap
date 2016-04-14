@@ -32,16 +32,7 @@
     // device APIs are available
     //
 	    function onDeviceReady() {
-	    	$("#lostconnect").modal("show");
-	        // Now safe to use device APIs
-			document.addEventListener("offline", onOffline, false);
-			document.addEventListener("online", onOnline, false);
-			function onOffline() {
-			    $("#lostconnect").modal("show");
-			}
-			function onOnline() {
-			    $("#lostconnect").modal("show");
-			}
+	    	("#route-top").show();
 	    }
 		</script>
 		<style>
