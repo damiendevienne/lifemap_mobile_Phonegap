@@ -135,6 +135,17 @@
 				position:absolute;
 			}
 		</style>
+		<script>
+			document.addEventListener("offline", onOffline, false);
+			document.addEventListener("online", onOnline, false);
+
+				function onOffline() {
+			    $("#lostconnect").modal("show");
+		}
+		function onOnline() {
+		    $("#lostconnect").modal("show");
+		}
+		</script>
 	</head>
 	<body style="background:black;">
 		<!--MAP-->
@@ -1034,16 +1045,6 @@
 			})
 		};
 		</script>
-		<script>
-		document.addEventListener("offline", onOffline, false);
-		document.addEventListener("online", onOnline, false);
-
-		function onOffline() {
-		    $("#lostconnect").modal("show");
-		}
-		function onOnline() {
-		    $("#lostconnect").modal("show");
-		}
-		</script>
+		
 	</body>
 </html>
