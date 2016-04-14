@@ -18,4 +18,5 @@
     <allow-navigation href="http://umr5558-treezoom/*" />
     <icon src="icon.png" /> 
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
+    <preference name="StatusBarBackgroundColor" value="#ff0000" />
 </widget>
