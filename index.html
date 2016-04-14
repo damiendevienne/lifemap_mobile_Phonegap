@@ -236,6 +236,24 @@
 			</div>
 		</div>
 
+
+		<!--LOST CONNECTION MODAL-->
+		<div id="lostconnect" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>CONNECTION LOST</h4>
+					</div>
+					<div class="modal-body">
+						<h5>Lifemap cannot be used without a connection to the internet. Sorry for the inconvenience</h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!--MODAL WITH THE MENU -->	
 		<div class="modal fade" id="theMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
@@ -272,20 +290,6 @@
 
 		<!-- SCRIPTS -->
 		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
-		<script>
-		document.addEventListener("offline", onOffline, false);
-		document.addEventListener("online", onOnline, false);
-
-		function onOffline() {
-		    alert('Warning: Lifemap cannot be used if you are not connected to the internet. Please connect your device to a network to be able to use Lifemap.');
-		}
-		function onOnline() {
-			alert('You are now connected to the internet. Happy exploration with Lifemap!');
-		}
-		map.on("click", function() {
-			alert("youclicked");
-		})
-		</script>
 
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -1029,6 +1033,17 @@
 				mrcaroute();
 			})
 		};
+		</script>
+		<script>
+		document.addEventListener("offline", onOffline, false);
+		document.addEventListener("online", onOnline, false);
+
+		function onOffline() {
+		    $("#lostconnect").modal("show");
+		}
+		function onOnline() {
+		    $("#lostconnect").modal("show");
+		}
 		</script>
 	</body>
 </html>
