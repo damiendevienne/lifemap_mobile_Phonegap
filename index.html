@@ -22,17 +22,33 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
-		    // Wait for device API libraries to load
+		//can we add here a small code that will try to connect to the server and return a message if it didn(t work? We'll try
+		function testCon() {
+			$.ajax({url: "http://lifema.univ-lyon1.fr",
+				type: "HEAD",
+				timeout:3000,
+				statusCode: {
+					200: function (response) {
+						$("#loading").hide();
+					},
+					400: function (response) {
+						$("#loading").hide();
+						errmess();
+					},
+					0: function (response) {
+						$("#loading").hide();
+						errmess();
+					}              
+				},
+				dataType : 'jsonp',
+				jsonp : 'json.wrf'
+			});
+		}
+		function errmess() {
+			//we add elements to "loading" to explain that there was a problem
 
-	    //
-	    function onLoad() {
-	        //cannot make that work...
-
-    // device APIs are available
-    //
-	    function onDeviceReady() {
-	    	//cannot make that work either
-	    }
+			$('#lostconnect').modal("toggle");
+		}
 		</script>
 		<style>
 			body,html {
@@ -148,10 +164,13 @@
 				position:absolute;
 			}
 		</style>
+		<!--PHONE SPECIFIC FUNCTIONS-->
 	</head>
-	<body onload="onLoad()" style="background:black;">
+	<body onload="testCon()" style="background:black;">
 		<!--MAP-->
-		<div id="map" style="height:100%; z-index:0;"></div>
+		<div id="map" style="height:100%; z-index:0;">
+			<div id="loading" style="position:absolute; left:50%; top:50%;z-index:10000;"><img src="img/loading.gif" height="20px;" width="20px"></div>
+		</div>
 		<!--SIMPLE SEARCH DIV-->
 		<div id="mainsearch" class="container-fluid" style="position: absolute; right:0px; left:0px; top:0px; background:transparent; margin: 10px 10px 0px 10px; padding:0px; z-index:10;">
 			<div class="btn-group" style="width:100%;">
@@ -254,11 +273,14 @@
 		<div id="lostconnect" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h4>CONNECTION LOST</h4>
+					<div class="modal-header text-center">
+						<h4>CONNECTION PROBLEM</h4>
+						<p style="color:grey;"><i class="fa fa-wifi" aria-hidden="true"></i><i class="fa fa-signal" aria-hidden="true"></i></p>
 					</div>
-					<div class="modal-body">
-						<h5>Lifemap cannot be used without a connection to the internet. Sorry for the inconvenience</h5>
+					<div class="modal-body text-center">
+						<p>There seems to be a problem with your internet connection. Please check that your device is connected to the internet.</p>
+						<p>If the problem persists after restarting the app and ensuring that the device is properly connected, please contact damien.de-vienne@univ-lyon1.fr.</p>
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
