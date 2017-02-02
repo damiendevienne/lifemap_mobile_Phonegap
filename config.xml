@@ -14,7 +14,9 @@
         Damien de Vienne 
     </author>
     <!--    <access origin="*" />-->
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+<!--    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" /> -->
+    <gap:plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="npm" />
+
     <allow-navigation href="http://umr5558-treezoom/*" />
     <icon src="icon.png" /> 
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
