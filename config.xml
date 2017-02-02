@@ -21,5 +21,6 @@
     <icon src="icon.png" /> 
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <!--This plugin allows testing the network quality-->
-    <plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />
+    <!--    <plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />-->
+    <gap:plugin name="org.apache.cordova.network-information" spec="0.2.15" source="npm" />
 </widget>
