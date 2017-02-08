@@ -348,6 +348,7 @@
 			map.on("moveend", function() {
 				CreatePopUps();
 			})
+/*
 			map.on("click", function() {
 				$("#searchinput").blur();
 				$("#searchinput2").blur();
@@ -367,6 +368,7 @@
 				}
 
 			})
+			*/
 			var SPfocus = L.marker([0,0]);
 			var pointA = new L.LatLng(0,0);
 			var pointB = new L.LatLng(1,1);
@@ -384,8 +386,8 @@
 			});
 			var mark = L.icon({
 				iconUrl: 'img/mark.png',
-				iconSize:     [20, 20], // size of the icon
-				iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+				iconSize:     [40, 40], // size of the icon
+				iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
 			});
 
 			var pin1 = L.icon({
