@@ -61,7 +61,7 @@
 			}
 			#searchinput {
 				width: 100%;
-				padding-left:10px;
+				padding-left:50px;
 				padding-right:30px;
 				font-size:18px;
 			}
@@ -76,7 +76,7 @@
 				cursor: pointer;
 				color: #585858;
 			}
-			/*
+			
 			#sandwich {
 				position: absolute;
 				left: 12px;
@@ -88,7 +88,19 @@
 				cursor: pointer;
 				color: #585858;
 			}
-			*/
+			#thenewmenudiv {
+				position: absolute;
+				text-align: center;
+				width:90%;
+				max-width: 300px;
+				left: 0px;
+				top:0px;
+				bottom:0px;
+				z-index:1000;
+				background-color: white;
+				padding:10px;
+				box-shadow: 0 0 10px black;
+			}
 			.routestick {
 				box-shadow:1px 1px 2px 0.2px #656565;				
 				background:white;
@@ -132,6 +144,15 @@
 				left:15px;
 				box-shadow: 0 0 10px black;
 			}
+			.bottomleft {
+				background-color: transparent;
+				position:absolute;
+				border:0px;
+				bottom:20px;
+				left:15px;
+				z-index: 0;
+			}
+
 			span.sciname {
 				font-size:small;
 				color: #505050;
@@ -163,6 +184,52 @@
 		 		box-shadow: 0 0 5px black;
 				position:absolute;
 			}
+
+
+			/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+
+	.modal.left .modal-dialog,
+	.modal.right .modal-dialog {
+		position: fixed;
+		margin: auto;
+		width: 320px;
+		height: 100%;
+		-webkit-transform: translate3d(0%, 0, 0);
+		    -ms-transform: translate3d(0%, 0, 0);
+		     -o-transform: translate3d(0%, 0, 0);
+		        transform: translate3d(0%, 0, 0);
+	}
+
+	.modal.left .modal-content,
+	.modal.right .modal-content {
+		height: 100%;
+		overflow-y: auto;
+	}
+	
+	.modal.left .modal-body,
+	.modal.right .modal-body {
+		padding: 15px 15px 80px;
+	}
+
+/*Left*/
+	.modal.left.fade .modal-dialog{
+		left: -320px;
+		-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+		   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+		     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+		        transition: opacity 0.3s linear, left 0.3s ease-out;
+	}
+	
+	.modal.left.fade.in .modal-dialog{
+		left: 0;
+	}
+
+
+
 		</style>
 		<!--PHONE SPECIFIC FUNCTIONS-->
 	</head>
@@ -174,8 +241,8 @@
 		<!--SIMPLE SEARCH DIV-->
 		<div id="mainsearch" class="container-fluid" style="position: absolute; right:0px; left:0px; top:0px; background:transparent; margin: 10px 10px 0px 10px; padding:0px; z-index:10;">
 			<div class="btn-group" style="width:100%;">
-				<!--span id="sandwich" class="glyphicon glyphicon-menu-hamburger"></span>-->
-				<input id="searchinput" type="search" class="form-control" style=" height:50px;" placeholder="Search species, clade, ...">
+				<span id="sandwich" class="glyphicon glyphicon-menu-hamburger"></span>
+				<input id="searchinput" type="search" class="form-control" style=" height:50px;" placeholder="Search species, clades, ...">
 				<span id="searchclear" class="glyphicon glyphicon-remove"></span>
 			</div>
 		</div>
@@ -184,9 +251,14 @@
 			<i class="fa fa-level-up"></i>
 		</a>
 		<!--LOGO HELP BUTTON-->
+		<!--
 		<a id="logohelp" class="btn btn-default btn-circle2">
-			<img src="img/LMicon1.png" width="50px" height="50px"></i>
-		</a>	
+			<img src="img/LMicon1.png" width="50px" height="50px">
+		</a>
+		-->	
+		<div class="bottomleft">
+			<img src="img/LMtext1.png" height="20px">
+		</div>
 			
 		<!-- ITINERARIES SEARCH DIV (TOP) -->
 		<div id="route-top" class="container-fluid" style=" padding-left:15px; padding-right:35px; background:#b4c3e0; box-shadow: 0 0 10px black; position: absolute; right:0px; left:0px; top:0; z-index: 100;" hidden>
@@ -290,7 +362,7 @@
 		</div>
 
 		<!--MODAL WITH THE MENU -->	
-		<div class="modal fade" id="theMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade left" id="theMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -322,7 +394,6 @@
 			</div>
 		</div>
 
-
 		<!-- SCRIPTS -->
 		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
 
@@ -348,6 +419,7 @@
 			map.on("moveend", function() {
 				CreatePopUps();
 			})
+
 /*
 			map.on("click", function() {
 				$("#searchinput").blur();
@@ -467,7 +539,7 @@
 			$("#recenter").click(function() {
 				mrcaroute();
 			});
-			$("#logohelp").click(function() {
+			$("#sandwich").click(function() {
 				$("#theMenu").modal("toggle");
 			})
 			//HERE We create two variables that will be responsible for storing taxids of species from and two which roads may be computed
