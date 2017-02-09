@@ -76,7 +76,15 @@
 				cursor: pointer;
 				color: #585858;
 			}
-			
+			#theMenu {
+				font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+				font-size: 12pt;				
+				font-weight: 600;
+			}
+			.menuentry {
+				padding-top:10px;
+				padding-bottom:10px;
+			}
 			#sandwich {
 				position: absolute;
 				left: 12px;
@@ -87,19 +95,6 @@
 				font-size: 20px;
 				cursor: pointer;
 				color: #585858;
-			}
-			#thenewmenudiv {
-				position: absolute;
-				text-align: center;
-				width:90%;
-				max-width: 300px;
-				left: 0px;
-				top:0px;
-				bottom:0px;
-				z-index:1000;
-				background-color: white;
-				padding:10px;
-				box-shadow: 0 0 10px black;
 			}
 			.routestick {
 				box-shadow:1px 1px 2px 0.2px #656565;				
@@ -144,6 +139,7 @@
 				left:15px;
 				box-shadow: 0 0 10px black;
 			}
+
 			.bottomleft {
 				background-color: transparent;
 				position:absolute;
@@ -152,8 +148,7 @@
 				left:15px;
 				z-index: 0;
 			}
-
-			span.sciname {
+				span.sciname {
 				font-size:small;
 				color: #505050;
 				font-size:16px;
@@ -208,6 +203,9 @@
 	.modal.right .modal-content {
 		height: 100%;
 		overflow-y: auto;
+	   -webkit-border-radius: 0px !important;
+	    -moz-border-radius: 0px !important;
+	    border-radius: 0px !important; 
 	}
 	
 	.modal.left .modal-body,
@@ -369,7 +367,21 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel"><img src = "img/logo1.png" width="50%"></h4>
 					</div>
-					<div class="modal-body text-justify" style="font-size: small;">
+					<div class="modal-body text-justify">
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class='fa fa-info fa-lg fa-fw'></i></div>
+							<div class='col-xs-10'>Tutorial</div>
+						</div> 
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class="fa fa-dot-circle-o fa-lg fa-fw"></i></div>
+							<div class='col-xs-10'>My location</div>
+						</div> 
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
+							<div class='col-xs-10'>The author</div>
+						</div> 
+
+<!--					
 					<div class="papernote">
 						<p><i class='fa fa-question-circle fa-fw fa-lg' style='color:grey;'></i>&nbsp;<b>Lifemap</b> is an interactive tool to explore the tree of life. The concept used in <b>Lifemap</b> is similar to the one used in cartography with tools like Google Maps© or Open Street Maps: exploring is done by zooming and panning.</p>
 					</div>
@@ -389,10 +401,18 @@
 					<div class="modal-footer">					
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
+-->
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!--DIV FOR THE TUTO -->
+		<div id="tuto">
+			
+		</div>
+
+
 
 		<!-- SCRIPTS -->
 		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
