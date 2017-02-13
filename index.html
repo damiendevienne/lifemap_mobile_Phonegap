@@ -154,6 +154,10 @@
 				padding-top:30px;
 				vertical-align: middle;
 				font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+				font-size: small;
+			}
+			.tuto p {
+				margin:8px;
 			}
 			.bottomleft {
 				background-color: transparent;
@@ -389,11 +393,11 @@
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class="fa fa-dot-circle-o fa-lg fa-fw"></i></div>
-							<div class='col-xs-10'>My location</div>
+							<div class='col-xs-10'>The Tree of Life</div>
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
-							<div class='col-xs-10'>The author</div>
+							<div class='col-xs-10'>Author</div>
 						</div> 
 					</div>
 				</div>
@@ -429,8 +433,8 @@
 					<div class="modal-body text-justify">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-							<div id="page1" class="tuto"><h3>Navigation (1/4)</h3>
-							In Lifemap, exploration is done by zooming and paning, just like in geographic maps.
+							<div id="page1" class="tuto"><h4>Navigation (1/6)</h4>
+							<p>In Lifemap, exploration is done by zooming and paning, just like in geographic maps.</p>
 							<div class='row display-table'>
 								<div class="col-xs-4 display-cell"><img src="img/pan.png" width="100%"></div>
 								<div class="col-xs-8 display-cell">Tap and hold finger on screen to pan.</div>
@@ -441,9 +445,29 @@
 							</div>
 
 							</div>
-							<div id="page2" class="tuto" hidden>bibi</div>
-							<div id="page3" class="tuto" hidden>bobo</div>
-							<div id="page4" class="tuto" hidden>bubu</div>
+							<div id="page2" class="tuto" hidden><h4>Searching (2/6)</h4>
+								<p>Click in the search bar on the top to find species, genera, families, etc. Suggestions appear while you are typing.</p><br>
+								<img src="img/search.png" width="70%">
+								<p>Click on your choice to focus on it.</p>
+							</div>
+							<div id="page3" class="tuto" hidden><h4>Interactive nodes (3/6)</h4>
+								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia.</P>
+								<img src="img/clicknode.png" width="70%">
+							</div>
+							<div id="page4" class="tuto" hidden><h4>Additional information (4/6)</h4>
+								<p>From the Wikipedia description, you can access direcly wikipedia if you want more details or if you want to edit or create the content of the page.</p>
+								<img src="img/wikifiche.png" width="70%">
+								<p>The "View full ancestry" button gives the route from the current node to the root of the tree (see next page).</p> 
+							</div>
+							<div id="page5" class="tuto" hidden><h4>Routes (5/6)</h4>
+								<p>Routes can also be computed from any two species or nodes in the tree. To do this, click on the icon at the bottom right corner of the screen and give the name of the source and destination clades/taxa.</p>
+								<img src="img/clickroute.png" width="70%">
+							</div>
+							<div id="page6" class="tuto" hidden><h4>Routes (6/6)</h4>
+							<p>When source and destination have been entered, the "route" is highlighted and an new bar appears at the bottom.</p>
+								<img src="img/theroute.png" width="70%">
+								<p>The icon at the bottom right corner details all clades encountered when going from the source to the destination. This list is interactive.</p>
+							</div>
 							<hr>
 							<div class="row" style="text-align: center;">
 								<div class="col-xs-6"><button type="button" class="btn btn-primary"  id="prev" disabled>Previous</button></div>
@@ -626,7 +650,7 @@
 			function hideshowbus(x) {
 				if (x==1) {$("#prev").prop("disabled", true);}
 				else {$("#prev").prop("disabled", false);}
-				if (x==4) {$("#next").prop("disabled", true);}
+				if (x==6) {$("#next").prop("disabled", true);}
 				else {$("#next").prop("disabled", false);}
 				$('.tuto').hide(); // hides all tuto pages
 				//then ponly shows those of interest.
@@ -634,7 +658,8 @@
 				if (x==2) {$('#page2').show();}
 				if (x==3) {$('#page3').show();}
 				if (x==4) {$('#page4').show();}
-
+				if (x==5) {$('#page5').show();}
+				if (x==6) {$('#page6').show();}
 			} 
 
 			//HERE We create two variables that will be responsible for storing taxids of species from and two which roads may be computed
