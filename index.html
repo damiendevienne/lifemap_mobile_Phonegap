@@ -139,7 +139,12 @@
 				left:15px;
 				box-shadow: 0 0 10px black;
 			}
-
+			.tuto {
+				text-align: center;
+				padding-top:30px;
+				vertical-align: middle;
+				font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			}
 			.bottomleft {
 				background-color: transparent;
 				position:absolute;
@@ -414,13 +419,24 @@
 					<div class="modal-body text-justify">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-							<div id="page1" hidden>1/4</div>
-							<div id="page2" hidden>bibi</div>
-							<div id="page3" hidden>bobo</div>
-							<div id="page4" hidden>bubu</div>
+							<div id="page1" class="tuto"><h3>Navigation (1/4)</h3>
+							In Lifemap, exploration is done by zooming and paning, just like in geographic maps.
+							<div class='row'>
+								<div class="col-xs-4"><img src="img/pan.png" width="100%"></div>
+								<div class="col-xs-8">Tap and hold finger on screen to pan.</div>
+							</div>
+							<div class='row'>
+								<div class="col-xs-4"><img src="img/zoom.png" width="100%"></div>
+								<div class="col-xs-8">Pinch two fingers to zoom in and out.</div>
+							</div>
+
+							</div>
+							<div id="page2" class="tuto" hidden>bibi</div>
+							<div id="page3" class="tuto" hidden>bobo</div>
+							<div id="page4" class="tuto" hidden>bubu</div>
 							<hr>
 							<div class="row" style="text-align: center;">
-								<div class="col-xs-6"><button type="button" class="btn btn-primary"  id="prev" disabled>NA</button></div>
+								<div class="col-xs-6"><button type="button" class="btn btn-primary"  id="prev" disabled>Previous</button></div>
 								<div class="col-xs-6"><button type="button" class="btn btn-primary" id="next">Next</button></div>
 							</div>
 						</div>
@@ -602,7 +618,13 @@
 				else {$("#prev").prop("disabled", false);}
 				if (x==4) {$("#next").prop("disabled", true);}
 				else {$("#next").prop("disabled", false);}
-				//This function also chooses what to display in the modal depending on the value of whichpage
+				$('.tuto').hide(); // hides all tuto pages
+				//then ponly shows those of interest.
+				if (x==1) {$('#page1').show();}
+				if (x==2) {$('#page2').show();}
+				if (x==3) {$('#page3').show();}
+				if (x==4) {$('#page4').show();}
+
 			} 
 
 			//HERE We create two variables that will be responsible for storing taxids of species from and two which roads may be computed
