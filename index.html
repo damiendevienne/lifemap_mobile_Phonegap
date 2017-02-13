@@ -111,6 +111,16 @@
 			p {
 				margin-bottom:0px;
 			}
+			.display-table{
+		    	display: table;
+			    table-layout: fixed;
+			}
+
+			.display-cell{
+				display: table-cell;
+			    vertical-align: middle;
+			    float: none;
+			}
 			.btn-circle {
 				width: 50px;
 				height: 50px;
@@ -153,7 +163,7 @@
 				left:15px;
 				z-index: 0;
 			}
-				span.sciname {
+			span.sciname {
 				font-size:small;
 				color: #505050;
 				font-size:16px;
@@ -421,13 +431,13 @@
 
 							<div id="page1" class="tuto"><h3>Navigation (1/4)</h3>
 							In Lifemap, exploration is done by zooming and paning, just like in geographic maps.
-							<div class='row'>
-								<div class="col-xs-4"><img src="img/pan.png" width="100%"></div>
-								<div class="col-xs-8">Tap and hold finger on screen to pan.</div>
+							<div class='row display-table'>
+								<div class="col-xs-4 display-cell"><img src="img/pan.png" width="100%"></div>
+								<div class="col-xs-8 display-cell">Tap and hold finger on screen to pan.</div>
 							</div>
-							<div class='row'>
-								<div class="col-xs-4"><img src="img/zoom.png" width="100%"></div>
-								<div class="col-xs-8">Pinch two fingers to zoom in and out.</div>
+							<div class='row display-table'>
+								<div class="col-xs-4 display-cell"><img src="img/zoom.png" width="100%"></div>
+								<div class="col-xs-8 display-cell">Pinch two fingers to zoom in and out.</div>
 							</div>
 
 							</div>
