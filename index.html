@@ -388,17 +388,22 @@
 					</div>
 					<div class="modal-body text-justify">
 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class='fa fa-info fa-lg fa-fw'></i></div>
+							<div class='col-xs-2'><i class='fa fa-question-circle-o fa-lg fa-fw'></i></div>
 							<div id="gototuto" class='col-xs-10'>Tutorial</div>
 						</div> 
 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class="fa fa-dot-circle-o fa-lg fa-fw"></i></div>
+							<div class='col-xs-2'><i class="fa fa-tree fa-lg fa-fw"></i></div>
 							<div class='col-xs-10'>The Tree of Life</div>
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
-							<div class='col-xs-10'>Author</div>
+							<div id="about" class='col-xs-10'>About</div>
 						</div> 
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class='fa fa-share fa-lg fa-fw'></i></div>
+							<div id="share" class='col-xs-10'>Share</div>
+						</div> 
+
 					</div>
 				</div>
 			</div>
@@ -426,6 +431,52 @@
 					</div>
 -->
 
+		<div id="AboutModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      </div>
+		      <div class="modal-body">
+				<div class="row">
+			  <div class="col-xs-4">
+			    <img src="img/ddv.png" width="100%">
+			    <p style="font-size:6pt;text-align:center;">© Barbara Portailler</p>
+			  </div>
+			  <div class="col-xs-8">
+			    <div>
+			    <b>Lifemap was created by Damien M. de Vienne</b>, a CNRS researcher working at the Biometry and Evolutionary Biology Laboratory (<a href="http://lbbe.univ-lyon1.fr">LBBE</a>) in Lyon (France). He developed Lifemap with the technical support of the Informatics Pole of the laboratory, in particular Stéphane Delmotte and Bruno Spataro. 
+			    </div>
+			    <div style="padding-top: 10px; text-align: center; font-size:8pt;">
+					For suggestions ,comments, etc: <a href="mailto:damien.de-vienne@univ-lyon1.fr"><i class='fa fa-envelope fa-fw fa-lg'></i></a>
+			    </div>
+			  </div>
+			</div>
+		      </div>
+		      <div class="modal-footer">
+			<div style="text-align:center;">
+			  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/CNRS.svg/200px-CNRS.svg.png" height="40px">
+			  <img src="https://upload.wikimedia.org/wikipedia/fr/7/7d/Logo_lbbe.png" height="40px">
+			</div>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>		
+		  </div>
+		</div>
+
+		<div id="ShareModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      </div>
+		      <div class="modal-body">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-text="This is Lifemap, the explorer of the entire Tree of Life! Check it out!" data-url="http://lifemap.univ-lyon1.fr" data-via="lifemap_tol" data-hashtags="ToL" data-show-count="true">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+			</div>
+		  </div>
+		</div>
+
 		<!--MODAL FOR TUTO THE MENU -->	
 		<div class="modal fade" id="tuto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
@@ -451,22 +502,22 @@
 								<p>Click on your choice to focus on it.</p>
 							</div>
 							<div id="page3" class="tuto" hidden><h4>Interactive nodes (3/6)</h4>
-								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia.</P>
+								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia (see next page).</P>
 								<img src="img/clicknode.png" width="70%">
 							</div>
 							<div id="page4" class="tuto" hidden><h4>Additional information (4/6)</h4>
-								<p>From the Wikipedia description, you can access direcly wikipedia if you want more details or if you want to edit or create the content of the page.</p>
+								<p>From the Wikipedia description, you can go direcly to the corresponding Wikipedia page, where you can (i) have more information, (ii) edit the text or (iii) add/modify the image.</p>
 								<img src="img/wikifiche.png" width="70%">
-								<p>The "View full ancestry" button gives the route from the current node to the root of the tree (see next page).</p> 
+								<p>The "View full ancestry" button gives the route from the current node to the root of the tree. This is detailed in the next page.</p> 
 							</div>
-							<div id="page5" class="tuto" hidden><h4>Routes (5/6)</h4>
-								<p>Routes can also be computed from any two species or nodes in the tree. To do this, click on the icon at the bottom right corner of the screen and give the name of the source and destination clades/taxa.</p>
+							<div id="page5" class="tuto" hidden><h4>Routes _ HowTo (5/6)</h4>
+								<p>Appart from the 'View full ancestry' button present on each description page, "routes" in the Tree of Life can be computed from any two species or group of species in the tree.</p><p>To do this, click on the icon at the bottom right corner of the main screen and give the name of the source and destination clades/taxa.</p>
 								<img src="img/clickroute.png" width="70%">
 							</div>
-							<div id="page6" class="tuto" hidden><h4>Routes (6/6)</h4>
-							<p>When source and destination have been entered, the "route" is highlighted and an new bar appears at the bottom.</p>
+							<div id="page6" class="tuto" hidden><h4>Routes _ Result (6/6)</h4>
+							<p>When source and destination have been entered, the "route" is highlighted and a new section appears at the bottom of the screen, giving the source, destination and Most Recent Common Ancestor (MRCA) of the two clades chosen.</p>
 								<img src="img/theroute.png" width="70%">
-								<p>The icon at the bottom right corner details all clades encountered when going from the source to the destination. This list is interactive.</p>
+								<p>The icon at the bottom right corner gives access to the list of clades that are encountered in the route from the source to the destination. This list is interactive.</p><p>The focus icon allows recentering the view to the route if necessary. </p>. 
 							</div>
 							<hr>
 							<div class="row" style="text-align: center;">
@@ -632,6 +683,13 @@
 			$("#sandwich").click(function() {
 				$("#theMenu").modal("toggle");
 			})
+			$("#about").click(function() {
+				$("#AboutModal").modal("toggle");
+			})
+			$("#share").click(function() {
+				$("#ShareModal").modal("toggle");
+			})
+
 			$("#gototuto").click(function() {
 				$("#tuto").modal("toggle");
 				whichpage = 1;
