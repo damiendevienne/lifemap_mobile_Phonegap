@@ -18,7 +18,9 @@
     
     <allow-navigation href="http://umr5558-treezoom/*" />
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
-
+    <feature name="StatusBar">
+      <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#165769"/>
     <preference name="StatusBarStyle" value="lightcontent" />    
