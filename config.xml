@@ -19,6 +19,11 @@
     <preference name="StatusBarBackgroundColor" value="#000000"/>
     <preference name="StatusBarStyle" value="lightcontent" />
     <allow-navigation href="http://umr5558-treezoom/*" />
-    <icon src="icon.png" /> 
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
+    <platform name="ios">
+      <icon src="icon.png" width="180" height="180" />
+    </platform>
+    <platform name="android">
+      <icon src="icon.png"/>
+    </platform>
 </widget>
