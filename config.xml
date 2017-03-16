@@ -11,12 +11,8 @@
     <author href="https://lbbe.univ-lyon1.fr/-de-Vienne-Damien-.html" email="damien.de-vienne@univ-lyon1.fr">
         Damien de Vienne 
     </author>
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#165769"/>
-    <preference name="StatusBarStyle" value="lightcontent" />    
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -30,6 +26,12 @@
 
     <preference name="phonegap-version"       value="cli-5.2.0" />
 	<preference name="deployment-target" value="7.1.2" />
+
+	<preference name="StatusBarOverlaysWebView" value="false" />
+	<preference name="StatusBarBackgroundColor" value="#000000" />
+	<preference name="StatusBarStyle" value="lightcontent" />
+	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
+
 
 
 	<plugin name="cordova-plugin-battery-status" />
@@ -52,8 +54,6 @@
     <plugin name="cordova-plugin-vibration" />
 
     <plugin name="cordova-plugin-whitelist" source="npm" />
-<!--    <plugin name="cordova-plugin-network-information" source="npm" /> -->
-    <plugin name="cordova-plugin-statusbar" source="npm" />
 
 
     <icon src="icon.png" gap:platform="ios" width="180" height="180" />
