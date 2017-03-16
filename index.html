@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -854,6 +854,11 @@
 				var URL_PREFIX_FINAL = "http://umr5558-treezoom.univ-lyon1.fr:8983/solr/taxo/select?q=taxid:";
 				var URL_SUFFIX = "&wt=json";
 				$("#searchinput").autocomplete({
+					//ONLY FOR IOS: 
+					open: function(event, ui) {
+    				    $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+				    },
+				    //END ONLY FOR IOS
 					source : function(request, response) {
 						var URL = URL_PREFIX + $("#searchinput").val() + URL_SUFFIX;
 						$.ajax({
