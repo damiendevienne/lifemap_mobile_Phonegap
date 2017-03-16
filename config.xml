@@ -32,7 +32,7 @@
 	<preference name="StatusBarStyle" value="lightcontent" />
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 
-
+	<platform name="ios" />
 
 	<plugin name="cordova-plugin-battery-status" />
     <plugin name="cordova-plugin-camera" />
