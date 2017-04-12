@@ -15,6 +15,15 @@
 		<link rel="stylesheet" href="js/leaflet/leaflet.css" />
 		<!-- jqueryui -->
 		<link href="js/searchbar/jquery-ui.css" rel="stylesheet" />
+
+		<!-- SWIPeR --> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+ 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -198,6 +207,41 @@
 		 		box-shadow: 0 0 5px black;
 				position:absolute;
 			}
+			.swiper-container {
+		        width: 100%;
+        		height: 100%;
+        		z-index:2000;
+        		background: #000;
+        		opacity: 0.8;
+        		position:absolute;
+			 }
+		    .swiper-slide {
+    	    	text-align: center;
+    	    	font-size: 18px;
+    	    	z-index:50;
+    	    	background: #000;
+    	    	/* Center slide text vertically */
+    	    	display: -webkit-box;
+    	    	display: -ms-flexbox;
+    	    	display: -webkit-flex;
+    	    	display: flex;
+    	   		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+		    }
+		    .swiper-pagination-bullet {
+			 	background: #ffffff;
+			    opacity: .4;
+			}
+			.swiper-pagination-bullet-active {
+ 			   opacity: 1;
+			   background: #007aff;
+			}
 
 
 			/*******************************
@@ -251,6 +295,41 @@
 		<!--PHONE SPECIFIC FUNCTIONS-->
 	</head>
 	<body onload="testCon()" style="background:black;">
+
+
+
+<!--TEST SWIPER-->
+	<div class="swiper-container" hidden>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p1.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p2.png" opacity=1;>
+                </div>
+            </div>
+
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+
+
 		<!--MAP-->
 		<div id="map" style="height:100%; z-index:0;">
 			<div id="loading" style="position:absolute; left:50%; top:50%;z-index:10000;"><img src="img/loading.gif" height="20px;" width="20px"></div>
@@ -502,13 +581,13 @@
 								<p>Click on your choice to focus on it.</p>
 							</div>
 							<div id="page3" class="tuto" hidden><h4>Interactive nodes (3/6)</h4>
-								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia (see next page).</P>
+								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia.</P>
 								<img src="img/clicknode.png" width="70%">
 							</div>
 							<div id="page4" class="tuto" hidden><h4>Additional information (4/6)</h4>
-								<p>From the Wikipedia description, you can go direcly to the corresponding Wikipedia page, where you can (i) have more information, (ii) edit the text or (iii) add/modify the image.</p>
+								<p>From the Wikipedia description, you can go direcly to the corresponding Wikipedia page that you can edit.</p>
 								<img src="img/wikifiche.png" width="70%">
-								<p>The "View full ancestry" button gives the route from the current node to the root of the tree. This is detailed in the next page.</p> 
+
 							</div>
 							<div id="page5" class="tuto" hidden><h4>Routes _ HowTo (5/6)</h4>
 								<p>Appart from the 'View full ancestry' button present on each description page, "routes" in the Tree of Life can be computed from any two species or group of species in the tree.</p><p>To do this, click on the icon at the bottom right corner of the main screen and give the name of the source and destination clades/taxa.</p>
@@ -691,9 +770,13 @@
 			})
 
 			$("#gototuto").click(function() {
-				$("#tuto").modal("toggle");
-				whichpage = 1;
-				hideshowbus(whichpage);
+//				$("#tuto").modal("toggle");
+//				whichpage = 1;
+//				hideshowbus(whichpage);
+	      		$("#theMenu").modal("toggle");
+				$(".swiper-container").show();
+				swiper.slideTo(0);
+
 			})
 			$("#next").click(function() {
 				whichpage += 1;
@@ -1326,5 +1409,22 @@
 			})
 		};
 		</script>
+
+<!--SWIPER-->
+<script>        
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        observer: true,
+        onReachEnd: function(swiper) {
+      	//callback function code here
+      		$(".swiper-container").hide();
+      		$("#theMenu").modal("toggle");
+	    }
+    });  
+
+    </script>
+
+
 	</body>
 </html>
