@@ -158,16 +158,6 @@
 				left:15px;
 				box-shadow: 0 0 10px black;
 			}
-			.tuto {
-				text-align: center;
-				padding-top:30px;
-				vertical-align: middle;
-				font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-				font-size: small;
-			}
-			.tuto p {
-				margin:8px;
-			}
 			.bottomleft {
 				background-color: transparent;
 				position:absolute;
@@ -298,8 +288,9 @@
 
 
 
-<!--TEST SWIPER-->
-	<div class="swiper-container" hidden>
+<!--SWIPER TUTORIAL-->
+	<div id = "tuto" class="swiper-container" hidden>
+        <div id="closeswiper" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
             	<div class="swiper-zoom-container">
@@ -311,21 +302,55 @@
                     <img src="img/p2.png" opacity=1;>
                 </div>
             </div>
+			<div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p3.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p4.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p5.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p6.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p7.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/p8.png" opacity=1;>
+                </div>
+            </div>            
+            <div class="swiper-slide"></div>
 
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-            <div class="swiper-slide">Slide 10</div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
 
+<!--SWIPER ABOUT-->
+	<div id = "aboutswiper" class="swiper-container" hidden>
+        <div id="closeswiper2" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/about.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide"></div>
+    	</div>
+    </div>
 
 
 
@@ -475,8 +500,12 @@
 							<div class='col-xs-10'>The Tree of Life</div>
 						</div> 
 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
+							<div class='col-xs-2'><i class='fa fa-info fa-lg fa-fw'></i></div>
 							<div id="about" class='col-xs-10'>About</div>
+						</div> 
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
+							<div id="about" class='col-xs-10'>Contact</div>
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-share fa-lg fa-fw'></i></div>
@@ -555,61 +584,6 @@
 			</div>
 		  </div>
 		</div>
-
-		<!--MODAL FOR TUTO THE MENU -->	
-		<div class="modal fade" id="tuto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-body text-justify">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-							<div id="page1" class="tuto"><h4>Navigation (1/6)</h4>
-							<p>In Lifemap, exploration is done by zooming and paning, just like in geographic maps.</p>
-							<div class='row display-table'>
-								<div class="col-xs-4 display-cell"><img src="img/pan.png" width="100%"></div>
-								<div class="col-xs-8 display-cell">Tap and hold finger on screen to pan.</div>
-							</div>
-							<div class='row display-table'>
-								<div class="col-xs-4 display-cell"><img src="img/zoom.png" width="100%"></div>
-								<div class="col-xs-8 display-cell">Pinch two fingers to zoom in and out.</div>
-							</div>
-
-							</div>
-							<div id="page2" class="tuto" hidden><h4>Searching (2/6)</h4>
-								<p>Click in the search bar on the top to find species, genera, families, etc. Suggestions appear while you are typing.</p><br>
-								<img src="img/search.png" width="70%">
-								<p>Click on your choice to focus on it.</p>
-							</div>
-							<div id="page3" class="tuto" hidden><h4>Interactive nodes (3/6)</h4>
-								<P>All nodes and tips in the tree are interactive. When clicking on a node, you have access to a picture and a descritpion that is retrieved from Wikipedia.</P>
-								<img src="img/clicknode.png" width="70%">
-							</div>
-							<div id="page4" class="tuto" hidden><h4>Additional information (4/6)</h4>
-								<p>From the Wikipedia description, you can go direcly to the corresponding Wikipedia page that you can edit.</p>
-								<img src="img/wikifiche.png" width="70%">
-
-							</div>
-							<div id="page5" class="tuto" hidden><h4>Routes _ HowTo (5/6)</h4>
-								<p>Appart from the 'View full ancestry' button present on each description page, "routes" in the Tree of Life can be computed from any two species or group of species in the tree.</p><p>To do this, click on the icon at the bottom right corner of the main screen and give the name of the source and destination clades/taxa.</p>
-								<img src="img/clickroute.png" width="70%">
-							</div>
-							<div id="page6" class="tuto" hidden><h4>Routes _ Result (6/6)</h4>
-							<p>When source and destination have been entered, the "route" is highlighted and a new section appears at the bottom of the screen, giving the source, destination and Most Recent Common Ancestor (MRCA) of the two clades chosen.</p>
-								<img src="img/theroute.png" width="70%">
-								<p>The icon at the bottom right corner gives access to the list of clades that are encountered in the route from the source to the destination. This list is interactive.</p><p>The focus icon allows recentering the view to the route if necessary. </p>. 
-							</div>
-							<hr>
-							<div class="row" style="text-align: center;">
-								<div class="col-xs-6"><button type="button" class="btn btn-primary"  id="prev" disabled>Previous</button></div>
-								<div class="col-xs-6"><button type="button" class="btn btn-primary" id="next">Next</button></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
 
 
 		<!-- SCRIPTS -->
@@ -763,45 +737,32 @@
 				$("#theMenu").modal("toggle");
 			})
 			$("#about").click(function() {
-				$("#AboutModal").modal("toggle");
+//				$("#AboutModal").modal("toggle");
+				$("#theMenu").modal("toggle");
+				$("#aboutswiper").show();
+				swiper2.slideTo(0);
+
 			})
 			$("#share").click(function() {
 				$("#ShareModal").modal("toggle");
 			})
-
 			$("#gototuto").click(function() {
-//				$("#tuto").modal("toggle");
-//				whichpage = 1;
-//				hideshowbus(whichpage);
 	      		$("#theMenu").modal("toggle");
-				$(".swiper-container").show();
+				$("#tuto").show();
 				swiper.slideTo(0);
 
 			})
-			$("#next").click(function() {
-				whichpage += 1;
-				console.log(whichpage);
-				hideshowbus(whichpage);
-			})
-			$("#prev").click(function() {
-				whichpage -= 1;
-				console.log(whichpage);
-				hideshowbus(whichpage);
-			})
-			function hideshowbus(x) {
-				if (x==1) {$("#prev").prop("disabled", true);}
-				else {$("#prev").prop("disabled", false);}
-				if (x==6) {$("#next").prop("disabled", true);}
-				else {$("#next").prop("disabled", false);}
-				$('.tuto').hide(); // hides all tuto pages
-				//then ponly shows those of interest.
-				if (x==1) {$('#page1').show();}
-				if (x==2) {$('#page2').show();}
-				if (x==3) {$('#page3').show();}
-				if (x==4) {$('#page4').show();}
-				if (x==5) {$('#page5').show();}
-				if (x==6) {$('#page6').show();}
-			} 
+			$("#closeswiper").click(function() {
+				console.log("yes");
+	      		$("#theMenu").modal("toggle");
+	      		$(this).parents('div').hide();
+			});
+			$("#closeswiper2").click(function() {
+				console.log("yes");
+	      		$("#theMenu").modal("toggle");
+	      		$(this).parents('div').hide();
+			});
+
 
 			//HERE We create two variables that will be responsible for storing taxids of species from and two which roads may be computed
 			var taxidFrom;
@@ -1412,19 +1373,26 @@
 
 <!--SWIPER-->
 <script>        
-	var swiper = new Swiper('.swiper-container', {
+	var swiper = new Swiper('#tuto', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
         observer: true,
         onReachEnd: function(swiper) {
       	//callback function code here
-      		$(".swiper-container").hide();
+      		$("#tuto").hide();
+      		$("#theMenu").modal("toggle");
+	    }
+    });  
+    var swiper2 = new Swiper('#aboutswiper', {
+        paginationClickable: true,
+        observer: true,
+        onReachEnd: function(swiper) {
+      	//callback function code here
+      		$("#aboutswiper").hide();
       		$("#theMenu").modal("toggle");
 	    }
     });  
 
     </script>
-
-
 	</body>
 </html>
