@@ -232,6 +232,11 @@
  			   opacity: 1;
 			   background: #007aff;
 			}
+			a {
+				color:white;
+				text-decoration: underline;
+				font-weight: bold;
+			}
 
 
 			/*******************************
@@ -278,6 +283,31 @@
 	.modal.left.fade.in .modal-dialog{
 		left: 0;
 	}
+
+/*STYLES FOR SHARE BUTTONS*/
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+ul.share-buttons img{
+  width: 32px;
+}
 
 
 
@@ -352,7 +382,7 @@
     	</div>
     </div>
 
-<!--THE TOL ABOUT-->
+<!--SWIPER TOL-->
 	<div id = "tolswiper" class="swiper-container" hidden>
         <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
@@ -360,6 +390,56 @@
             	<div class="swiper-zoom-container">
                     <img src="img/tree.png" opacity=1;>
                 </div>
+            </div>
+            <div class="swiper-slide"></div>
+    	</div>
+    </div>
+<!--SWIPER CONTACT-->
+	<div id = "contactswiper" class="swiper-container" hidden>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    
+                    <img src="img/back.png" opacity=1;>
+					<div style="position:absolute; width:auto; height:auto; z-index:15000; color: white; font-size: 10pt;">
+						<img src="img/petitlogo.png" width=40px>
+						<br><br>
+						<p><i>Author</i>&nbsp;&nbsp;&nbsp;Damien de Vienne, CNRS</p>
+						<p><i>Contact</i> &nbsp;&nbsp;&nbsp;<a href="mailto:damien.de-vienne@univ-lyon1.fr">damien.de-vienne@univ-lyon1.fr</a></p>
+						<hr>
+						<p>Laboratoire de Biométrie et Biologie Évolutive (LBBE)<br>
+						UMR 5558 CNRS/Université Lyon 1 <br>
+						Villeurbanne, France</p>
+						<br><br>
+	                    <img src="img/logocnrsunivlyon.png">
+
+
+					</div>
+                </div>               
+            </div>
+            <div class="swiper-slide"></div>
+    	</div>
+    </div>
+
+
+<!--SWIPER SHARE-->
+	<div id = "shareswiper" class="swiper-container" hidden>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            	<div class="swiper-zoom-container">                    
+                    <img src="img/back.png" opacity=1;>
+					<div style="position:absolute; width:auto; height:auto; z-index:15000; color: white; font-size: 10pt;">
+						<ul class="share-buttons">
+						  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&t=Lifemap%20-%20Explore%20the%20entire%20Tree%20of%20Life%20on%20your%20mobile!" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="img/Facebook.svg"></a></li>
+						  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&text=Lifemap%20-%20Explore%20the%20entire%20Tree%20of%20Life%20on%20your%20mobile!:%20http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&via=lifemap_tol" target="_blank" title="Tweet"><img alt="Tweet" src="img/Twitter.svg"></a></li>
+						  <li><a href="https://plus.google.com/share?url=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="img/Google+.svg"></a></li>
+						  <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&media=http://lifemap.univ-lyon1.fr/img/img1.png&description=Lifemap%20is%20a%20tool%20to%20interactively%20explore%20the%20Tree%20of%20Life%20by%20zooming%20and%20panning%20in%20a%20manner%20similar%20to%20geographic%20maps.%20All%20nodes%20and%20tips%20of%20the%20tree%20are%20interactive.%20On%20click%2C%20a%20brief%20description%20and%20a%20picture%20of%20the%20group%20is%20displayed.%20This%20description%20is%20retrieved%20from%20Wikipedia." target="_blank" title="Pin it"><img alt="Pin it" src="img/Pinterest.svg"></a></li>
+						  <li><a href="mailto:?subject=Lifemap%20-%20Explore%20the%20entire%20Tree%20of%20Life%20on%20your%20mobile!&body=Lifemap%20is%20a%20tool%20to%20interactively%20explore%20the%20Tree%20of%20Life%20by%20zooming%20and%20panning%20in%20a%20manner%20similar%20to%20geographic%20maps.%20All%20nodes%20and%20tips%20of%20the%20tree%20are%20interactive.%20On%20click%2C%20a%20brief%20description%20and%20a%20picture%20of%20the%20group%20is%20displayed.%20This%20description%20is%20retrieved%20from%20Wikipedia.:%20http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html" target="_blank" title="Send email"><img alt="Send email" src="img/Email.svg"></a></li>
+						</ul>
+					</div>
+                </div>               
             </div>
             <div class="swiper-slide"></div>
     	</div>
@@ -517,7 +597,7 @@
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
-							<div id="about" class='col-xs-10'>Contact</div>
+							<div id="contact" class='col-xs-10'>Contact</div>
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-share fa-lg fa-fw'></i></div>
@@ -762,8 +842,19 @@
 				swiper3.slideTo(0);
 
 			})
+			$("#contact").click(function() {
+//				$("#AboutModal").modal("toggle");
+				$("#theMenu").modal("toggle");
+				$("#contactswiper").show();
+				swiper4.slideTo(0);
+
+			})
 			$("#share").click(function() {
-				$("#ShareModal").modal("toggle");
+//				$("#AboutModal").modal("toggle");
+				$("#theMenu").modal("toggle");
+				$("#shareswiper").show();
+				swiper5.slideTo(0);
+
 			})
 			$("#gototuto").click(function() {
 	      		$("#theMenu").modal("toggle");
@@ -1415,6 +1506,25 @@
       		$("#theMenu").modal("toggle");
 	    }
     });  
+    var swiper4 = new Swiper('#contactswiper', {
+        paginationClickable: true,
+        observer: true,
+        onReachEnd: function(swiper) {
+      	//callback function code here
+      		$("#contactswiper").hide();
+      		$("#theMenu").modal("toggle");
+	    }
+    });  
+    var swiper5 = new Swiper('#shareswiper', {
+        paginationClickable: true,
+        observer: true,
+        onReachEnd: function(swiper) {
+      	//callback function code here
+      		$("#shareswiper").hide();
+      		$("#theMenu").modal("toggle");
+	    }
+    });  
+
 
     </script>
 	</body>
