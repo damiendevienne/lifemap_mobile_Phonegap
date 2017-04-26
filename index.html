@@ -290,7 +290,7 @@
 
 <!--SWIPER TUTORIAL-->
 	<div id = "tuto" class="swiper-container" hidden>
-        <div id="closeswiper" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
             	<div class="swiper-zoom-container">
@@ -341,7 +341,7 @@
 
 <!--SWIPER ABOUT-->
 	<div id = "aboutswiper" class="swiper-container" hidden>
-        <div id="closeswiper2" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
          <div class="swiper-slide">
             	<div class="swiper-zoom-container">
@@ -352,6 +352,18 @@
     	</div>
     </div>
 
+<!--THE TOL ABOUT-->
+	<div id = "tolswiper" class="swiper-container" hidden>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            	<div class="swiper-zoom-container">
+                    <img src="img/tree.png" opacity=1;>
+                </div>
+            </div>
+            <div class="swiper-slide"></div>
+    	</div>
+    </div>
 
 
 
@@ -497,7 +509,7 @@
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class="fa fa-tree fa-lg fa-fw"></i></div>
-							<div class='col-xs-10'>The Tree of Life</div>
+							<div id = "thetol" class='col-xs-10'>The Tree of Life</div>
 						</div> 
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-info fa-lg fa-fw'></i></div>
@@ -743,6 +755,13 @@
 				swiper2.slideTo(0);
 
 			})
+			$("#thetol").click(function() {
+//				$("#AboutModal").modal("toggle");
+				$("#theMenu").modal("toggle");
+				$("#tolswiper").show();
+				swiper3.slideTo(0);
+
+			})
 			$("#share").click(function() {
 				$("#ShareModal").modal("toggle");
 			})
@@ -752,17 +771,12 @@
 				swiper.slideTo(0);
 
 			})
-			$("#closeswiper").click(function() {
-				console.log("yes");
+			function closetheswiper(x) {
+				console.log("blam");
 	      		$("#theMenu").modal("toggle");
-	      		$(this).parents('div').hide();
-			});
-			$("#closeswiper2").click(function() {
-				console.log("yes");
-	      		$("#theMenu").modal("toggle");
-	      		$(this).parents('div').hide();
-			});
+	      		$(x).parents('div').hide();
 
+			}
 
 			//HERE We create two variables that will be responsible for storing taxids of species from and two which roads may be computed
 			var taxidFrom;
@@ -1389,6 +1403,15 @@
         onReachEnd: function(swiper) {
       	//callback function code here
       		$("#aboutswiper").hide();
+      		$("#theMenu").modal("toggle");
+	    }
+    });  
+    var swiper3 = new Swiper('#tolswiper', {
+        paginationClickable: true,
+        observer: true,
+        onReachEnd: function(swiper) {
+      	//callback function code here
+      		$("#tolswiper").hide();
       		$("#theMenu").modal("toggle");
 	    }
     });  
