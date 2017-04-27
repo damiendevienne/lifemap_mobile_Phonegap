@@ -11,11 +11,13 @@
     <author href="https://lbbe.univ-lyon1.fr/-de-Vienne-Damien-.html" email="damien.de-vienne@univ-lyon1.fr">
         Damien de Vienne 
     </author>
-    <icon src="icon.png" platform="ios" width="180" height="180" />
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-    <gap:plugin name="cordova-plugin-statusbar" source="npm" />
-    
+    <icon src="logo_ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="logo_mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="logo_hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="logo_xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="logo_xxhdpi.png"  gap:platform="android"    gap:qualifier="xxhdpi" />
+    <icon src="logo_xxxhdpi.png"  gap:platform="android"    gap:qualifier="xxxhdpi" />
+
     <allow-navigation href="http://umr5558-treezoom/*" />
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <feature name="StatusBar">
@@ -24,5 +26,5 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#165769"/>
     <preference name="StatusBarStyle" value="lightcontent" />    
-    <preference name="deployment-target" value="7.1.2" />
+
 </widget>
