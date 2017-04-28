@@ -18,6 +18,12 @@
     <icon src="logo_xxhdpi.png"  gap:platform="android"    gap:qualifier="xxhdpi" />
     <icon src="logo_xxxhdpi.png"  gap:platform="android"    gap:qualifier="xxxhdpi" />
 
+<!-- Define app splash screen for each platform. -->
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+
     <allow-navigation href="http://umr5558-treezoom/*" />
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <feature name="StatusBar">
