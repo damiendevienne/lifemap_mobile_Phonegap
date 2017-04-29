@@ -47,10 +47,5 @@
     <preference name="StatusBarStyle" value="lightcontent" />        
 -->
 
-<preference name="AutoHideSplashScreen" value="false" />  
-<preference name="SplashScreenDelay" value="10000" />  
-<preference name="ShowSplashScreenSpinner" value="false" />  
-<preference name="FadeSplashScreen" value="true" />  
-<preference name="FadeSplashScreenDuration" value="1.0" />  
-
+<preference name="AutoHideSplashScreen" value="true" />  
 </widget>
