@@ -43,4 +43,6 @@
     <preference name="StatusBarBackgroundColor" value="#165769"/>
     <preference name="StatusBarStyle" value="lightcontent" />    
 -->
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>
