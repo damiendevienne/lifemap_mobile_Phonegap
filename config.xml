@@ -11,6 +11,9 @@
     <author href="https://lbbe.univ-lyon1.fr/-de-Vienne-Damien-.html" email="damien.de-vienne@univ-lyon1.fr">
         Damien de Vienne 
     </author>
+
+    <plugin name="cordova-plugin-splashscreen" />
+
     <icon src="logo_ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="logo_mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="logo_hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
@@ -41,6 +44,13 @@
     </feature>
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#165769"/>
-    <preference name="StatusBarStyle" value="lightcontent" />    
+    <preference name="StatusBarStyle" value="lightcontent" />        
 -->
+
+<preference name="AutoHideSplashScreen" value="false" />  
+<preference name="SplashScreenDelay" value="10000" />  
+<preference name="ShowSplashScreenSpinner" value="false" />  
+<preference name="FadeSplashScreen" value="true" />  
+<preference name="FadeSplashScreenDuration" value="1.0" />  
+
 </widget>
