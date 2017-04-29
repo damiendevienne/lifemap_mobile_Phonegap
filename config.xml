@@ -47,6 +47,4 @@
     <preference name="StatusBarBackgroundColor" value="#165769"/>
     <preference name="StatusBarStyle" value="lightcontent" />        
 -->
-<preference name="AutoHideSplashScreen" value="true" />  
-<preference name="SplashShowOnlyFirstTime" value="false" />
 </widget>
