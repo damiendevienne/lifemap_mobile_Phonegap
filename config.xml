@@ -12,7 +12,7 @@
         Damien de Vienne 
     </author>
 
-    <plugin name="cordova-plugin-splashscreen" />
+<!--    <plugin name="cordova-plugin-splashscreen" />-->
 
     <icon src="logo_ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="logo_mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
@@ -21,8 +21,8 @@
     <icon src="logo_xxhdpi.png"  gap:platform="android"    gap:qualifier="xxhdpi" />
     <icon src="logo_xxxhdpi.png"  gap:platform="android"    gap:qualifier="xxxhdpi" />
 
-    <splash src="splash.png" />   
-<!-- Define app splash screen for each platform. 
+<!--    <splash src="splash.png" />   
+ Define app splash screen for each platform. 
     <splash src="screen_ldpi.png" platform="android" qualifier="port-ldpi" />   
     <splash src="screen_mdpi.png" platform="android" qualifier="port-mdpi" />   
     <splash src="screen_hdpi.png" platform="android" qualifier="port-hdpi" />   
